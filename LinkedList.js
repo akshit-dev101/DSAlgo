@@ -67,10 +67,20 @@ class LinkedList {
       this.head = this.head.next;
       temp.next = null;
       this.length--;
-      return temp;
       if (this.length == 0) {
         this.tail = null;
       }
+      return temp;
+    }
+  }
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return undefined;
+    }
+    let temp = this.head;
+    for (let i = 0; i < index; i++) {
+      temp = temp.next;
+      return temp;
     }
   }
 }
